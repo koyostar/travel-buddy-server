@@ -9,6 +9,10 @@ app.use(express.json());
 
 const db = connectToDatabase();
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Travel Buddy API!");
+});
+
 app.use("/api/accommodations", require("./routes/accommodationRoute"));
 app.use("/api/places", require("./routes/placeRoutes"));
 app.use("/api/food", require("./routes/foodRoutes"));
